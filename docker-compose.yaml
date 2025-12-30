@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    networks:
+      - internal-net
     environment:
       - ASR_MODEL=base
     ports:
@@ -15,3 +17,6 @@ services:
 
 volumes:
   cache-whisper:
+networks:
+  internal-net:
+    external: true
